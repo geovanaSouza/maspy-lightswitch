@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/lightswitch.py
+src/maspy_lightswitch.egg-info/PKG-INFO
+src/maspy_lightswitch.egg-info/SOURCES.txt
+src/maspy_lightswitch.egg-info/dependency_links.txt
+src/maspy_lightswitch.egg-info/requires.txt
+src/maspy_lightswitch.egg-info/top_level.txt
