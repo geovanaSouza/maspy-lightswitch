@@ -24,17 +24,18 @@ class LightSwitch(Environment):
     @action(listed, ("turn_on", "turn_off"), switch_transition)
     def switch_light(self, agt, action: str):
         switch_percept = self.get(Percept("switch"), ck_values=False)
+        assert isinstance(switch_percept, Percept)
+        self.print(f"Light is {switch_percept.values}")
 
-        current_state = switch_percept.values
         target_state = self.ACTION_TO_STATE[action]
         
         self.change(switch_percept, values=target_state)
-        self.print(f"{agt} switched to {target_state} (was {current_state})")
+        self.print(f"{agt} switched to {target_state}")
 
 class Flipper(Agent):
     @pl(gain, Goal("flipSwitch"))
     def flipSwitch(self, src):
-        self.print("Fliping Switch")
+        self.print("Flipping Switch")
         best_action = self.get_best_action("LightSwitch")
         if best_action is not None:
             action, _ = best_action
