@@ -9,7 +9,7 @@ setup: ## Create the virtual environment and install project dependencies
 	uv venv $(VENV) --python 3.12
 	uv pip install --python $(PYTHON) -e .
 
-run: ## Run the shelf robot simulation
+run: ## Run the lightswitch simulation
 	$(PYTHON) src/lightswitch.py
 
 clean: ## Remove the virtual environment
